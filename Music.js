@@ -249,7 +249,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    }
    });
  
-const devs = ['439393453332234243','438621328246046732'];
+const devs = ['438621328246046732'];
 const adminprefix = "$";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
@@ -272,20 +272,5 @@ client.on('message', message => {
       message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
   }
   });
-
-client.on('message', msg => {
-
-    if (msg.content == '#join') {
-        if (msg.member.voiceChannel) {
-
-     if (msg.member.voiceChannel.joinable) {
-         msg.member.voiceChannel.join().then(msg.react('white_check_mark'));
-     }
-    }
-}
-})
-client.on('ready', () => {
-    client.channels.get("521061895206338600").join(); 
-    });
 
 client.login(process.env.BOT_TOKEN);
